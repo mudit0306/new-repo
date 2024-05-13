@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.5.1')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // dependency used for main source code as added using implementation
+//    testImplementation'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.18.1'
+// https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.4.0'
+// https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.10.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+}
+
+test {
+    useJUnitPlatform()
+}

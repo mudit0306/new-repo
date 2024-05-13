@@ -1,0 +1,6 @@
+rootProject.name = 'UIAPI_Automation'
+include 'src:test:UI'
+findProject(':src:test:UI')?.name = 'UI'
+include 'API'
+include 'CommonUtils'
+

@@ -25,6 +25,8 @@ public class GetPostTest  {
 
         RestAssured.given().get().then().assertThat().statusCode(200).header("X-Ratelimit-Limit", equalTo("60"))
                 .header("X-Ratelimit-Limit", Integer::parseInt, equalTo(60));
+
+        System.out.println("Completed Test to Validate Header - X-Ratelimit-Limit");
     }
 
     @Test

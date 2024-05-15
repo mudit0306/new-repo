@@ -17,7 +17,7 @@ public class GetPostTest  {
     static void setUp(){
 
         RestAssured.baseURI = ReusableUtils.getProperty("Properties/api_config.properties","baseurl");
-
+        System.out.println("Setup completed with Base url");
     }
 
     @Test

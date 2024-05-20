@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -22,6 +23,19 @@ public class BaseTestClass {
 
     @BeforeAll
     static void setup() throws MalformedURLException {
+
+        File folder = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\chrome");
+        File[] listOfFiles = folder.listFiles();
+        if(listOfFiles != null) {
+            for (int i = 0; i < listOfFiles.length; i++) {
+                if (listOfFiles[i].isFile()) {
+                    System.out.println("File " + listOfFiles[i].getName());
+                } else if (listOfFiles[i].isDirectory()) {
+                    System.out.println("Directory " + listOfFiles[i].getName());
+                }
+            }
+        }
+
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\chrome\\chromedriver.exe");
 //        WebDriverManager.firefoxdriver().setup();
         System.out.println("Browser Setup completed");

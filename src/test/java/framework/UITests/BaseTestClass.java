@@ -24,8 +24,8 @@ public class BaseTestClass {
     @BeforeAll
     static void setup() throws MalformedURLException {
 
-        File folder = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\chrome");
-        System.out.println("Checking inside "+System.getProperty("user.dir")+"\\src\\test\\resources\\chrome");
+        File folder = new File(System.getProperty("user.dir")+"/src/test/resources/chrome");
+        System.out.println("Checking inside "+System.getProperty("user.dir")+"/src/test/resources/chrome");
         File[] listOfFiles = folder.listFiles();
         if(listOfFiles != null) {
             for (int i = 0; i < listOfFiles.length; i++) {
@@ -36,6 +36,8 @@ public class BaseTestClass {
                 }
             }
         }
+        else
+            System.out.println("NULL FILES");
 
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\chrome\\chromedriver.exe");
 //        WebDriverManager.firefoxdriver().setup();

@@ -22,7 +22,7 @@ public class BaseTestClass {
 
     @BeforeAll
     static void setup() throws MalformedURLException {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Mudit\\Documents\\GIT_REPO\\UIAPI_Automation_Git\\src\\test\\resources\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\chrome\\chromedriver.exe");
 //        WebDriverManager.firefoxdriver().setup();
         System.out.println("Browser Setup completed");
         driver=new ChromeDriver();

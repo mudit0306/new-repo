@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -20,10 +22,10 @@ public class BaseTestClass {
 
     @BeforeAll
     static void setup() throws MalformedURLException {
-//        System.setProperty("webdriver.chrome.driver","C:\\Users\\Mudit\\Documents\\GIT_REPO\\UIAPI_Automation_Git\\src\\test\\resources\\chrome\\chromedriver.exe");
-        WebDriverManager.firefoxdriver().setup();
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Mudit\\Documents\\GIT_REPO\\UIAPI_Automation_Git\\src\\test\\resources\\chrome\\chromedriver.exe");
+//        WebDriverManager.firefoxdriver().setup();
         System.out.println("Browser Setup completed");
-//        driver=new ChromeDriver();
+        driver=new ChromeDriver();
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

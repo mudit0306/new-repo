@@ -39,7 +39,7 @@ public class BaseTestClass {
         else
             System.out.println("NULL FILES");
 
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/resource/chrome/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/resources/chrome/chromedriver.exe");
 //        WebDriverManager.firefoxdriver().setup();
         System.out.println("Browser Setup completed");
         driver=new ChromeDriver();

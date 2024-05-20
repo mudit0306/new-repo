@@ -10,6 +10,9 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.3.2'
+
     testImplementation platform('org.junit:junit-bom:5.5.1')
 //    testImplementation 'org.junit.jupiter:junit-jupiter'
     // dependency used for main source code as added using implementation

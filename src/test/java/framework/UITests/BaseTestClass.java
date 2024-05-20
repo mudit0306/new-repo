@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTestClass {
 
@@ -19,10 +20,11 @@ public class BaseTestClass {
 
     @BeforeAll
     static void setup() throws MalformedURLException {
-        DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setBrowserName(Browser.CHROME.browserName());
+//        System.setProperty("webdriver.chrome.driver","C:\\Users\\Mudit\\Documents\\GIT_REPO\\UIAPI_Automation_Git\\src\\test\\resources\\chrome\\chromedriver.exe");
+        WebDriverManager.firefoxdriver().setup();
+        System.out.println("Browser Setup completed");
+//        driver=new ChromeDriver();
 
-        driver = new RemoteWebDriver(new URL("http://localhost:8080/"),cap);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
@@ -30,6 +32,7 @@ public class BaseTestClass {
 
     @AfterAll
     static void clear(){
+        System.out.println("Clearing the Browser");
         driver.close();
     }
 
